@@ -40,11 +40,14 @@ function onGalleryListClick(event) {
 	`);
     instance.show();
 
-    window.addEventListener('keydown', (event) => {
-        if (event.code === "Escape") {
-            instance.close();
-        }
-    })
+  
 };
 
- console.log(galleryItems);
+console.log(galleryItems);
+ 
+window.addEventListener('keydown', (event) => {
+    if (event.code === "Escape") {
+        instance.close();
+        window.removeEventListener('keydown');
+    }
+});
