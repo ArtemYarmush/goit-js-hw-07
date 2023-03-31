@@ -3,7 +3,7 @@ import { galleryItems } from "./gallery-items.js";
 const galleryListEl = document.querySelector(".gallery");
 galleryListEl.setAttribute("uk-lightbox", "caption-position:bottom");
 
-galleryListEl.addEventListener("click", onGalleryListElClick);
+galleryListEl.addEventListener("click", galleryListEl);
 function createGalleryElement(array) {
   return array
     .map(({ preview, original, description }) => {
@@ -22,8 +22,6 @@ function createGalleryElement(array) {
 
 const galleryElements = createGalleryElement(galleryItems);
 galleryListEl.insertAdjacentHTML("beforeend", galleryElements);
-
-function onGalleryListElClick(event) {}
 
 const gallery = new SimpleLightbox(".gallery a", {
   captionSelector: "img",
